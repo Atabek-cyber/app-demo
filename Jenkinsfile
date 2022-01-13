@@ -14,7 +14,13 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Atabek-cyber/app-demo.git']]])       
             }
         }
-    
+    stage('Docker ps') {
+      steps{
+        script {
+          /bin/sh "docker ps"
+        }
+      }
+    }
     // Building Docker images
     stage('Building image') {
       steps{
@@ -23,6 +29,7 @@ pipeline {
         }
       }
     }
+
          // Uploading Docker images into Docker Hub
     stage('Uploading Image') {
      steps{    
