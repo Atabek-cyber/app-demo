@@ -4,7 +4,7 @@ pipeline {
         //once you sign up for Docker hub, use that user_id here
         registry = "atabekcyber/dockertest"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
-        registryCredential = 'dockerHub'
+        registryCredential = 'dockerhub'
         dockerImage = ''
     }
     
@@ -17,7 +17,7 @@ pipeline {
     stage('Docker ps') {
       steps{
         script {
-          /bin/sh "docker ps"
+          sh 'docker ps'
         }
       }
     }
