@@ -17,7 +17,7 @@ pipeline {
     stage('Docker ps') {
       steps{
         script {
-          sh "docker ps"
+          /bin/bash "docker ps"
         }
       }
     }
