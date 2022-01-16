@@ -1,7 +1,7 @@
 resource_group_name = "aks_terraform_rg"
 location            = "East Us"
 cluster_name        = "terraform-aks"
-kubernetes_version  = "1.22.1"
+kubernetes_version  = "1.22.2"
 system_node_count   = 1
 node_resource_group = "aks_terraform_resources_rg"
 resource_group_name_vm         = "vm_demo_rg"
